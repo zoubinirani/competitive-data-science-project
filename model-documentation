@@ -1,0 +1,52 @@
+Please see below for excerpts of a write-up I did to complete the 'How to Win a Data Science Competition: Learn from Top Kagglers' course on Coursera (colloquially called 'Competitive Data Science').
+
+Data available on Kaggle:
+https://www.kaggle.com/c/competitive-data-science-predict-future-sales
+https://www.kaggle.com/c/competitive-data-science-final-project
+
+Zoubin
+
+---------
+
+
+Competition:
+
+1. Background on you/your team
+
+Just one person on the team (me). I come from a non-technical educational background and am self-taught. 
+
+
+2. Summary
+
+Model is heavily tree based (both gradient boosting decision trees and random forests). I used various tree-based models from Sklearn, XGBoost, and LightGBM.
+
+Most important features were the monthly sales lags by far. Increasing the number of lag periods significantly increased the performance of the model.
+
+Using a high-performance server on AWS, the model takes around 2.5-3 hours to load and train. 
+
+3. Features Selection / Engineering
+
+The most important features were the monthly sales lags. As well, other lagging features, such as number of sales per month, avg sales per store, and avg sales per item were very useful.
+
+
+4. Training Method(s)
+
+Model is heavily tree based (gradient boosting decision trees and random forests). I used Scikit, XGBoost, and LightGBM.
+
+Four tree models were initially used for predictions. A fifth tree model was used as an ensemble model. I let the tree model determine their importance. No weights were set manually.
+
+In hindsight, I should have more utilized non-tree based models to improve model diversity.
+
+
+5. Interesting findings
+
+Aim to have the average prediction around 0.33. I previously tested various constant values as predictions on the Kaggle dataset. Having a mean of 0.33 led to the best performance.
+
+Lags in the dataset were heavily influencial, so having access to a high-performance server through AWS allowed me to easily load and crunch more data.
+
+
+6. Simple Features and Methods
+
+Ensembling contributed minimal value. A single model would achieve nearly similar performance. 
+
+
